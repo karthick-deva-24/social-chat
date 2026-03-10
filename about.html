@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Stackly Social Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Loading Animation -->
+    <div id="loader" class="loader-container">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="dashboard-wrapper">
+        <div class="dashboard-container">
+            <!-- LEFT SIDEBAR -->
+            <aside class="sidebar">
+                <!-- APP LOGO -->
+                <div class="app-logo-section">
+                    <a href="index.html"><img src="images/stackly jpg.webp" alt="Stackly Logo" class="app-logo"></a>
+                </div>
+                <div class="profile-section">
+                    <div class="profile-avatar-box">
+                        <div class="blob-bg"></div>
+                        <img src="images/avatar_11.webp" alt="Bogdan Nikitin" class="main-avatar">
+                    </div>
+                    <h2>Bogdan Nikitin</h2>
+                    <p>@nikitinteam</p>
+                </div>
+
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-compass"></i>
+                        <span>News Feed</span>
+                    </a>
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>Messages</span>
+                        <span class="badge">6</span>
+                    </a>
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-users-rectangle"></i>
+                        <span>Forums</span>
+                    </a>
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-user-group"></i>
+                        <span>Friends</span>
+                        <span class="badge">3</span>
+                    </a>
+
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="login.html" class="nav-item">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span>Login</span>
+                    </a>
+                    <a href="about.html" class="nav-item active">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>About</span>
+                    </a>
+                </nav>
+
+                <div class="theme-switcher">
+                    <p class="theme-title">Theme</p>
+                    <button id="theme-toggle" class="theme-btn active">
+                        <i class="fa-solid fa-moon" style="width: 20px;"></i> Dark Mode
+                    </button>
+                    <a href="home2.html" class="theme-btn" style="margin-top: 10px;">
+                        <i class="fa-solid fa-table-cells" style="width: 20px;"></i> Home 2
+                    </a>
+                </div>
+
+            </aside>
+
+            <!-- MAIN CONTENT AREA WRAPPER -->
+            <div id="content-about" class="content-section active" style="display: contents;">
+                <!-- MAIN CONTENT -->
+                <main class="feed" style="grid-column: span 2;">
+                    <header class="feed-header alt-header" style="margin-bottom: 20px;">
+                        <div>
+                            <h1>About Stackly</h1>
+                            <p>Connecting the world through meaningful digital experiences.</p>
+                        </div>
+                    </header>
+
+                    <div class="glass-card" style="padding: 40px; border-radius: 25px; line-height: 1.8;">
+                        <img src="images/unsplash_photo-1522346513757-54c552451fdc.webp" alt="Stackly Vision"
+                            style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px; margin-bottom: 30px;">
+
+                        <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 15px; font-weight: 800;">
+                            Our Story & Vision</h2>
+                        <p style="color: var(--text-main); font-size: 1.05rem; margin-bottom: 20px;">
+                            Founded on the belief that technology should bring people closer together rather than push
+                            them apart, <strong>Stackly</strong> has evolved into a premier social dashboard empowering
+                            communities worldwide. In an era where digital noise often drowns out genuine connection,
+                            our overarching mission is to construct a sanctuary for authenticity, creativity, and
+                            purposeful engagement.
+                        </p>
+                        <p style="color: var(--text-main); font-size: 1.05rem; margin-bottom: 20px;">
+                            From our humble beginnings as a small tech collective, we recognized a glaring gap in the
+                            social media ecosystem: a lack of platforms that prioritize user well-being, smooth
+                            aesthetic design, and unfiltered expression. Today, Stackly stands as a testament to what is
+                            possible when design thinking meets human psychology. We don't just build features; we
+                            orchestrate environments where ideas can flourish seamlessly.
+                        </p>
+
+                        <h3
+                            style="color: var(--primary); font-size: 1.4rem; margin-top: 35px; margin-bottom: 15px; font-weight: 700;">
+                            Core Pillars of Our Philosophy</h3>
+                        <p style="color: var(--text-main); font-size: 1.05rem; margin-bottom: 20px;">
+                            <strong>1. Uncompromising Aesthetics:</strong> We believe that beautiful design is not a
+                            luxury; it is a necessity for a calming user experience. Every curve, shadow, and transition
+                            on Stackly is meticulously crafted using cutting-edge UI principles to deliver a "buttery
+                            smooth" journey across all your devices.
+                        </p>
+                        <p style="color: var(--text-main); font-size: 1.05rem; margin-bottom: 20px;">
+                            <strong>2. Community First:</strong> Social platforms are only as strong as the people who
+                            inhabit them. We prioritize tools that elevate voices, foster collaborative storytelling,
+                            and empower creators rather than simply serving endless algorithmic feeds. Your data is
+                            yours, and your timeline reflects your genuine interests.
+                        </p>
+                        <p style="color: var(--text-main); font-size: 1.05rem; margin-bottom: 20px;">
+                            <strong>3. Perpetual Innovation:</strong> The digital landscape is ever-shifting. Stackly
+                            commits to remaining at the vanguard of technological integration, bringing you responsive
+                            grids, dynamic themes, and immersive media handling—all without sacrificing the lightweight
+                            speed you expect.
+                        </p>
+
+                        <h3
+                            style="color: var(--primary); font-size: 1.4rem; margin-top: 35px; margin-bottom: 15px; font-weight: 700;">
+                            Looking Ahead</h3>
+                        <p style="color: var(--text-main); font-size: 1.05rem; margin-bottom: 30px;">
+                            As we look toward the horizon, Stackly is just getting started. The ecosystem we are
+                            building is designed to adapt to the future—incorporating localized forums, robust friend
+                            networks, and seamless cross-platform messaging. We invite you to join us on this continuous
+                            journey of shaping a healthier, more beautiful digital universe.
+                        </p>
+
+                        <hr style="border: 0; border-top: 1px solid rgba(128, 128, 128, 0.2); margin: 40px 0;">
+
+                        <div
+                            style="text-align: center; background: rgba(79, 70, 229, 0.05); padding: 30px; border-radius: 20px; border: 1px solid rgba(79, 70, 229, 0.1);">
+                            <i class="fa-regular fa-envelope"
+                                style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                            <h4
+                                style="color: var(--text-main); font-size: 1.2rem; font-weight: 700; margin-bottom: 5px;">
+                                Get In Touch</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">For press
+                                inquiries, brand partnerships, or general support, please reach out to our team.</p>
+                            <a href="mailto:contact@stackly.com"
+                                style="display: inline-block; padding: 12px 30px; background: var(--primary); color: #fff; border-radius: 30px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);">
+                                contact@stackly.com
+                            </a>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
