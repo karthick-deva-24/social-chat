@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Loading Animation -->
+    <div id="loader" class="loader-container">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="dashboard-wrapper">
+        <div class="floating-avatar float-left">
+            <img src="https://i.pravatar.cc/150?img=33" alt="User">
+        </div>
+        <div class="floating-avatar float-right">
+            <img src="https://i.pravatar.cc/150?img=47" alt="User">
+        </div>
+
+        <div class="dashboard-container">
+            <!-- LEFT SIDEBAR -->
+            <aside class="sidebar">
+                <!-- APP LOGO -->
+                <div class="app-logo-section">
+                    <img src="images/stackly jpg.webp" alt="Stackly Logo" class="app-logo">
+                </div>
+                <div class="profile-section">
+                    <div class="profile-avatar-box">
+                        <div class="blob-bg"></div>
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Bogdan Nikitin" class="main-avatar">
+                    </div>
+                    <h2>Bogdan Nikitin</h2>
+                    <p>@nikitinteam</p>
+                </div>
+
+                <nav class="main-nav">
+                    <a href="#" class="nav-item active" data-target="content-newsfeed">
+                        <i class="fa-solid fa-compass"></i>
+                        <span>News Feed</span>
+                    </a>
+                    <a href="#" class="nav-item" data-target="content-messages">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>Messages</span>
+                        <span class="badge">6</span>
+                    </a>
+                    <a href="#" class="nav-item" data-target="content-forums">
+                        <i class="fa-solid fa-users-rectangle"></i>
+                        <span>Forums</span>
+                    </a>
+                    <a href="#" class="nav-item" data-target="content-friends">
+                        <i class="fa-solid fa-user-group"></i>
+                        <span>Friends</span>
+                        <span class="badge">3</span>
+                    </a>
+                    <a href="#" class="nav-item" data-target="content-media">
+                        <i class="fa-solid fa-photo-film"></i>
+                        <span>Media</span>
+                    </a>
+                    <a href="#" class="nav-item" data-target="content-settings">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="login.html" class="nav-item">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span>Login</span>
+                    </a>
+                </nav>
+
+                <div class="theme-switcher">
+                    <p class="theme-title">Theme</p>
+                    <button id="theme-toggle" class="theme-btn active">
+                        <i class="fa-solid fa-moon" style="width: 20px;"></i> Dark Mode
+                    </button>
+                    <a href="home2.html" class="theme-btn" style="margin-top: 10px;">
+                        <i class="fa-solid fa-table-cells" style="width: 20px;"></i> Home 2
+                    </a>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-blob"></div>
+                    <div class="download-content">
+                        <img src="https://i.pravatar.cc/150?img=32" alt="mini" class="mini-avatar pos-1">
+                        <img src="https://i.pravatar.cc/150?img=68" alt="mini" class="mini-avatar pos-2">
+                        <img src="https://i.pravatar.cc/150?img=44" alt="mini" class="mini-avatar pos-3">
+                        <p>Download the App</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT AREA WRAPPER -->
+            <div id="content-newsfeed" class="content-section active" style="display: contents;">
+                <!-- MAIN FEED -->
+                <main class="feed">
+                    <header class="feed-header">
+                        <h1>Feeds</h1>
+                        <div class="feed-tabs">
+                            <span class="tab" id="tab-recents">Recents</span>
+                            <span class="tab active" id="tab-friends">Friends</span>
+                            <span class="tab" id="tab-popular">Popular</span>
+                        </div>
+                    </header>
+
+                    <div id="feed-friends" class="feed-content-pane active-pane">
+
+                        <!-- POST 1 -->
+                        <div class="post-card post-1">
+                            <div class="post-header">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="user-info">
+                                        <img src="https://i.pravatar.cc/150?img=15" alt="George Lobko"
+                                            class="post-avatar">
+                                        <div>
+                                            <h4>George Lobko</h4>
+                                            <p>2 hours ago</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            </div>
+
+                            <div class="post-desc">
+                                Hi everyone, today I was on the most beautiful mountain in the world 😍, I also want to
+                                say
+                                hi
+                                to
+                                <span class="tag"><img src="https://i.pravatar.cc/150?img=20" alt="S"> Silena</span>,
+                                <span class="tag"><img src="https://i.pravatar.cc/150?img=21" alt="O"> Olya</span> and
+                                <span class="tag"><img src="https://i.pravatar.cc/150?img=22" alt="D"> Davis</span>!
+                            </div>
+
+                            <div class="post-gallery">
+                                <img src="https://images.unsplash.com/photo-1522346513757-54c552451fdc?w=400&q=80"
+                                    alt="Mountain 1" class="img-tall">
+                                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80"
+                                    alt="Mountain 2" class="img-tall">
+                                <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=600&q=80"
+                                    alt="Mountain 3" class="img-wide">
+                            </div>
+
+                            <div class="post-footer">
+                                <div class="post-stats">
+                                    <span class="stat"><i class="fa-regular fa-eye"></i> 6355</span>
+                                    <span class="stat action-btn like-trigger"><i class="fa-solid fa-heart liked"></i>
+                                        Like</span>
+                                    <span class="stat action-btn"><i class="fa-regular fa-comment"></i> Comment</span>
+                                </div>
+
+                                <div class="reaction-tray-wrapper">
+                                    <div class="reactions-popover">
+                                        <span class="emoji">🔥</span>
+                                        <span class="emoji">😍</span>
+                                        <span class="emoji">😮</span>
+                                        <span class="emoji">😠</span>
+                                        <span class="emoji">❤️</span>
+                                        <span class="close-reactions"><i class="fa-solid fa-xmark"></i></span>
+                                    </div>
+                                    <div class="active-reaction">
+                                        <span>🔥 Woow!!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- POST 2 -->
+                        <div class="post-card post-2">
+                            <div class="post-header">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="user-info">
+                                        <img src="https://i.pravatar.cc/150?img=60" alt="Vitaliy Boyko"
+                                            class="post-avatar">
+                                        <div>
+                                            <h4>Vitaliy Boyko</h4>
+                                            <p>3 hours ago</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            </div>
+
+                            <div class="post-desc">
+                                I chose a wonderful coffee today, I wanted to tell you what product they have in stock -
+                                it's a
+                                latte with coconut 🥥 milk... delicious... it's really incredibly tasty!!! 😋
+                            </div>
+
+                            <div class="post-footer">
+                                <div class="post-stats">
+                                    <span class="stat"><i class="fa-regular fa-eye"></i> 6355</span>
+                                    <span class="stat action-btn"><i class="fa-solid fa-heart liked"></i> Like</span>
+                                    <span class="stat action-btn"><i class="fa-regular fa-comment"></i> Comment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- POST 3 -->
+                        <div class="post-card post-1" style="margin-bottom: 5px;">
+                            <div class="post-header">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="user-info">
+                                        <img src="https://i.pravatar.cc/150?img=12" alt="Amanda L" class="post-avatar">
+                                        <div>
+                                            <h4>Amanda Lee</h4>
+                                            <p>5 hours ago</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            </div>
+
+                            <div class="post-desc">
+                                Just finished reading an amazing book by the lake 📖🌿 Highly recommend taking some time
+                                to
+                                disconnect!
+                            </div>
+
+                            <div class="post-gallery">
+                                <img src="https://images.unsplash.com/photo-1544716278-e513176f20b5?w=600&q=80"
+                                    alt="Book" class="img-wide" style="grid-column: span 3; height: 180px;">
+                            </div>
+
+                            <div class="post-footer">
+                                <div class="post-stats">
+                                    <span class="stat"><i class="fa-regular fa-eye"></i> 4120</span>
+                                    <span class="stat action-btn like-trigger"><i class="fa-solid fa-heart liked"></i>
+                                        Like</span>
+                                    <span class="stat action-btn"><i class="fa-regular fa-comment"></i> Comment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- POST 4 -->
+                        <div class="post-card post-2">
+                            <div class="post-header">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="user-info">
+                                        <img src="https://i.pravatar.cc/150?img=53" alt="David M" class="post-avatar">
+                                        <div>
+                                            <h4>David Miller</h4>
+                                            <p>8 hours ago</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            </div>
+
+                            <div class="post-desc">
+                                My new setup for coding is finally complete! Really loving the mechanical keyboard feel.
+                                💻✨
+                                What do you guys think?
+                            </div>
+
+                            <div class="post-footer">
+                                <div class="post-stats">
+                                    <span class="stat"><i class="fa-regular fa-eye"></i> 1850</span>
+                                    <span class="stat action-btn"><i class="fa-solid fa-heart liked"></i> Like</span>
+                                    <span class="stat action-btn"><i class="fa-regular fa-comment"></i> Comment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- POST 5 -->
+                        <div class="post-card post-1" style="margin-bottom: 5px;">
+                            <div class="post-header">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="user-info">
+                                        <img src="https://i.pravatar.cc/150?img=33" alt="Eleanor Pena"
+                                            class="post-avatar">
+                                        <div>
+                                            <h4>Eleanor Pena</h4>
+                                            <p>12 hours ago</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            </div>
+
+                            <div class="post-desc">
+                                Exploring the new local street food market today. The flavors are absolutely incredible!
+                                🍜🌮 Can't wait to share the recipe inspired by this.
+                            </div>
+
+                            <div class="post-gallery">
+                                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80"
+                                    alt="Food" class="img-wide" style="grid-column: span 3; height: 180px;">
+                            </div>
+
+                            <div class="post-footer">
+                                <div class="post-stats">
+                                    <span class="stat"><i class="fa-regular fa-eye"></i> 8900</span>
+                                    <span class="stat action-btn like-trigger"><i class="fa-solid fa-heart liked"></i>
+                                        Like</span>
+                                    <span class="stat action-btn"><i class="fa-regular fa-comment"></i> Comment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- POST 6 -->
+                        <div class="post-card post-2">
+                            <div class="post-header">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="user-info">
+                                        <img src="https://i.pravatar.cc/150?img=68" alt="Wade Warren"
+                                            class="post-avatar">
+                                        <div>
+                                            <h4>Wade Warren</h4>
+                                            <p>15 hours ago</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            </div>
+
+                            <div class="post-desc">
+                                Just deployed a new AI project to production! 🚀 Big thanks to the team for their hard
+                                work. It's been a crazy week but totally worth it.
+                            </div>
+
+                            <div class="post-footer">
+                                <div class="post-stats">
+                                    <span class="stat"><i class="fa-regular fa-eye"></i> 12.4k</span>
+                                    <span class="stat action-btn"><i class="fa-solid fa-heart liked"></i> Like</span>
+                                    <span class="stat action-btn"><i class="fa-regular fa-comment"></i> Comment</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- POST 7 -->
+                        <div class="post-card post-1" style="margin-bottom: 5px;">
+                            <div class="post-header">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="user-info">
+                                        <img src="https://i.pravatar.cc/150?img=5" alt="Brittni" class="post-avatar">
+                                        <div>
+                                            <h4>Brittni Lando</h4>
+                                            <p>18 hours ago</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            </div>
+
+                            <div class="post-desc">
+                                Just grabbed tickets for the music festival next month! 🎶 Anyone else going? Let's meet
+                                up!
+                            </div>
+
+                            <div class="post-footer">
+                                <div class="post-stats">
+                                    <span class="stat"><i class="fa-regular fa-eye"></i> 3200</span>
+                                    <span class="stat action-btn"><i class="fa-solid fa-heart liked"></i> Like</span>
+                                    <span class="stat action-btn"><i class="fa-regular fa-comment"></i> Comment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- POST 8 -->
+                        <div class="post-card post-2">
+                            <div class="post-header">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="user-info">
+                                        <img src="https://i.pravatar.cc/150?img=8" alt="Sarah Connor"
+                                            class="post-avatar">
+                                        <div>
+                                            <h4>Sarah Connor</h4>
+                                            <p>1 day ago</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            </div>
+
+                            <div class="post-desc">
+                                Finished my first marathon today! 🏃‍♀️🏅 It was brutal but the feeling of crossing that
+                                finish line is unmatched.
+                            </div>
+
+                            <div class="post-gallery">
+                                <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&q=80"
+                                    alt="Marathon" class="img-wide" style="grid-column: span 3; height: 180px;">
+                            </div>
+
+                            <div class="post-footer">
+                                <div class="post-stats">
+                                    <span class="stat"><i class="fa-regular fa-eye"></i> 21.5k</span>
+                                    <span class="stat action-btn like-trigger"><i class="fa-solid fa-heart liked"></i>
+                                        Like</span>
+                                    <span class="stat action-btn"><i class="fa-regular fa-comment"></i> Comment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- POST 9 -->
+                        <div class="post-card post-1" style="margin-bottom: 5px;">
+                            <div class="post-header">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="user-info">
+                                        <img src="https://i.pravatar.cc/150?img=6" alt="Ivan" class="post-avatar">
+                                        <div>
+                                            <h4>Ivan Shevchenko</h4>
+                                            <p>2 days ago</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            </div>
+
+                            <div class="post-desc">
+                                Currently reading "Clean Code" for the third time. Every pass reveals something new
+                                about software craftsmanship. 💻📖
+                            </div>
+
+                            <div class="post-footer">
+                                <div class="post-stats">
+                                    <span class="stat"><i class="fa-regular fa-eye"></i> 1450</span>
+                                    <span class="stat action-btn"><i class="fa-solid fa-heart liked"></i> Like</span>
+                                    <span class="stat action-btn"><i class="fa-regular fa-comment"></i> Comment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End Friends Feed -->
+
+                    <div id="feed-recents" class="feed-content-pane" style="display: none;">
+                        <div class="glass-card" style="padding: 30px; text-align: center; margin-bottom: 15px;">
+                            <i class="fa-solid fa-clock-rotate-left"
+                                style="font-size: 2rem; color: #94a3b8; margin-bottom: 15px;"></i>
+                            <h3 style="color: var(--text-main);">No Recent Posts</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Check back later for new updates
+                                from your network.</p>
+                        </div>
+                    </div>
+
+                    <div id="feed-popular" class="feed-content-pane" style="display: none;">
+                        <div class="glass-card" style="padding: 30px; text-align: center; margin-bottom: 15px;">
+                            <i class="fa-solid fa-fire"
+                                style="font-size: 2rem; color: var(--pink-accent); margin-bottom: 15px;"></i>
+                            <h3 style="color: var(--text-main);">Trending Now</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">See what's popular across the
+                                community right now.</p>
+
+                            <!-- Sample Popular Post -->
+                            <div class="post-card post-1" style="margin-top: 20px; text-align: left;">
+                                <div class="post-header">
+                                    <div class="user-info">
+                                        <img src="https://i.pravatar.cc/150?img=43" alt="Trending" class="post-avatar">
+                                        <div>
+                                            <h4>Design Daily</h4>
+                                            <p>1 hour ago</p>
+                                        </div>
+                                    </div>
+                                    <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </div>
+                                <div class="post-desc">
+                                    The new UI/UX trends for 2027 are looking incredibly vibrant. Glassmorphism is here
+                                    to stay, but with more emphasis on accessibility and deeper contrasting shadows.
+                                    Thoughts? 🎨✨
+                                </div>
+                                <div class="post-footer">
+                                    <div class="post-stats">
+                                        <span class="stat"><i class="fa-regular fa-eye"></i> 15.2k</span>
+                                        <span class="stat action-btn like-trigger"><i
+                                                class="fa-solid fa-heart liked"></i> 4.1k</span>
+                                        <span class="stat action-btn"><i class="fa-regular fa-comment"></i> 892</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CREATE POST -->
+                    <div class="create-post-box">
+                        <div class="create-input-area">
+                            <img src="https://i.pravatar.cc/150?img=11" alt="Me" class="post-avatar">
+                            <input type="text" placeholder="Share something" id="create-input">
+                            <i class="fa-regular fa-face-smile smile-icon"></i>
+                        </div>
+                        <div class="create-actions">
+                            <div class="action-buttons">
+                                <button><i class="fa-solid fa-file"></i> File</button>
+                                <button><i class="fa-regular fa-image"></i> Image</button>
+                                <button><i class="fa-solid fa-location-dot"></i> Location</button>
+                                <button><i class="fa-solid fa-earth-americas"></i> Public <i
+                                        class="fa-solid fa-chevron-down"></i></button>
+                            </div>
+                            <button class="send-btn">Send</button>
+                        </div>
+                    </div>
+                </main>
+
+                <!-- RIGHT SIDEBAR -->
+                <aside class="right-sidebar">
+                    <!-- Stories -->
+                    <section class="stories-section">
+                        <div class="section-header">
+                            <h3>Stories</h3>
+                        </div>
+                        <div class="stories-grid">
+                            <a href="404.html"
+                                style="text-decoration: none; color: inherit; transition: opacity 0.3s ease;"
+                                class="story-link">
+                                <div class="story-card"
+                                    style="background-image: url('https://images.unsplash.com/photo-1506744626753-1fa44df31c78?w=300&q=80');">
+                                    <div class="story-overlay">
+                                        <img src="https://i.pravatar.cc/150?img=65" alt="Anatoly">
+                                        <span>Anatoly Pr...</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="404.html"
+                                style="text-decoration: none; color: inherit; transition: opacity 0.3s ease;"
+                                class="story-link">
+                                <div class="story-card"
+                                    style="background-image: url('https://images.unsplash.com/photo-1542202685-1bfcb3176662?w=300&q=80');">
+                                    <div class="story-overlay">
+                                        <img src="https://i.pravatar.cc/150?img=59" alt="Lolita">
+                                        <span>Lolita Earns</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="404.html"
+                                style="text-decoration: none; color: inherit; transition: opacity 0.3s ease;"
+                                class="story-link">
+                                <div class="story-card"
+                                    style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&q=80');">
+                                    <div class="story-overlay">
+                                        <img src="https://i.pravatar.cc/150?img=33" alt="Mia">
+                                        <span>Mia Davis</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="404.html"
+                                style="text-decoration: none; color: inherit; transition: opacity 0.3s ease;"
+                                class="story-link">
+                                <div class="story-card"
+                                    style="background-image: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=300&q=80');">
+                                    <div class="story-overlay">
+                                        <img src="https://i.pravatar.cc/150?img=17" alt="Chris">
+                                        <span>Chris P</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Suggestions -->
+                    <section class="suggestions-section">
+                        <div class="section-header">
+                            <h3>Suggestions</h3>
+                        </div>
+                        <div class="suggestion-list">
+                            <div class="suggestion-item">
+                                <div class="sugg-user">
+                                    <img src="https://i.pravatar.cc/150?img=12" alt="Nick">
+                                    <div class="sugg-info">
+                                        <h4>Nick</h4>
+                                        <p>Shelburne</p>
+                                    </div>
+                                </div>
+                                <button class="follow-btn" onclick="window.location.href='404.html'">Follow</button>
+                            </div>
+                            <div class="suggestion-item">
+                                <div class="sugg-user">
+                                    <img src="https://i.pravatar.cc/150?img=5" alt="Brittni">
+                                    <div class="sugg-info">
+                                        <h4>Brittni</h4>
+                                        <p>Lando</p>
+                                    </div>
+                                </div>
+                                <button class="follow-btn" onclick="window.location.href='404.html'">Follow</button>
+                            </div>
+                            <div class="suggestion-item">
+                                <div class="sugg-user">
+                                    <img src="https://i.pravatar.cc/150?img=6" alt="Ivan">
+                                    <div class="sugg-info">
+                                        <h4>Ivan</h4>
+                                        <p>Shevchenko</p>
+                                    </div>
+                                </div>
+                                <button class="follow-btn" onclick="window.location.href='404.html'">Follow</button>
+                            </div>
+                            <div class="suggestion-item">
+                                <div class="sugg-user">
+                                    <img src="https://i.pravatar.cc/150?img=8" alt="Sarah">
+                                    <div class="sugg-info">
+                                        <h4>Sarah</h4>
+                                        <p>Connor</p>
+                                    </div>
+                                </div>
+                                <button class="follow-btn" onclick="window.location.href='404.html'">Follow</button>
+                            </div>
+                            <div class="suggestion-item">
+                                <div class="sugg-user">
+                                    <img src="https://i.pravatar.cc/150?img=9" alt="Tom">
+                                    <div class="sugg-info">
+                                        <h4>Tom</h4>
+                                        <p>Hanks</p>
+                                    </div>
+                                </div>
+                                <button class="follow-btn" onclick="window.location.href='404.html'">Follow</button>
+                            </div>
+                        </div>
+                        <a href="404.html" class="see-all">See all</a>
+                    </section>
+
+                    <!-- Recommendations -->
+                    <section class="recommendations-section">
+                        <div class="section-header">
+                            <h3>Recommendations</h3>
+                        </div>
+                        <div class="recs-grid">
+                            <div class="rec-item rec-ui">
+                                <i class="fa-solid fa-xmark" style="font-size: 24px; color: #000;"></i>
+                                <span style="color: #000;">UI/UX</span>
+                            </div>
+                            <div class="rec-item rec-music">
+                                <i class="fa-solid fa-music"></i>
+                                <span>Music</span>
+                                <div class="music-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                            <div class="rec-item rec-cooking">
+                                <span>Cooking</span>
+                            </div>
+                            <div class="rec-item rec-hiking">
+                                <i class="fa-solid fa-mountain-sun"></i>
+                                <span>Hiking</span>
+                            </div>
+                        </div>
+                    </section>
+                </aside>
+            </div> <!-- End Newsfeed wrapper -->
+
+            <!-- OTHER SECTIONS (Hidden by default) -->
+            <div id="content-messages" class="content-section" style="display: none; grid-column: 2 / 4;">
+                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                    <header class="feed-header alt-header">
+                        <div>
+                            <h1>Messages</h1>
+                            <p>Read your latest conversations</p>
+                        </div>
+                    </header>
+                    <a href="404.html" style="text-decoration: none; color: inherit;">
+                        <div class="glass-card new-post-st" style="display: flex; gap: 15px; align-items: center;">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="Avatar"
+                                style="width: 50px; border-radius: 50%;">
+                            <div style="flex: 1;">
+                                <h4 style="margin: 0; color: #f8fafc;">Alice Wonderland</h4>
+                                <p style="margin: 0; font-size: 0.85rem;">Hey, are we still meeting tomorrow?</p>
+                            </div>
+                            <span class="badge"
+                                style="background: var(--pink-accent); color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem;">2
+                                new</span>
+                        </div>
+                    </a>
+                    <a href="404.html" style="text-decoration: none; color: inherit;">
+                        <div class="glass-card new-post-st" style="display: flex; gap: 15px; align-items: center;">
+                            <img src="https://i.pravatar.cc/150?img=33" alt="Avatar"
+                                style="width: 50px; border-radius: 50%;">
+                            <div style="flex: 1;">
+                                <h4 style="margin: 0; color: #f8fafc;">Team Alpha Group</h4>
+                                <p style="margin: 0; font-size: 0.85rem;">Bob: I just uploaded the files to the drive.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </main>
+            </div>
+
+            <div id="content-forums" class="content-section" style="display: none; grid-column: 2 / 4;">
+                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                    <header class="feed-header alt-header">
+                        <div>
+                            <h1>Forums</h1>
+                            <p>Join the community discussions</p>
+                        </div>
+                    </header>
+                    <a href="404.html" style="text-decoration: none; color: inherit;">
+                        <div class="glass-card new-post-st" style="padding: 20px;">
+                            <h3 style="color: var(--primary); margin-bottom: 10px;">Web Design Feedback <span
+                                    style="font-size: 0.8rem; color: #94a3b8; font-weight: normal;">• 14 replies</span>
+                            </h3>
+                            <p>I'm looking for some feedback on my new portfolio layout...</p>
+                        </div>
+                    </a>
+                    <a href="404.html" style="text-decoration: none; color: inherit;">
+                        <div class="glass-card new-post-st" style="padding: 20px;">
+                            <h3 style="color: var(--primary); margin-bottom: 10px;">Tech Support Q&A <span
+                                    style="font-size: 0.8rem; color: #94a3b8; font-weight: normal;">• 205 topics</span>
+                            </h3>
+                            <p>Help with setting up the new development environment...</p>
+                        </div>
+                    </a>
+                </main>
+            </div>
+
+            <div id="content-friends" class="content-section" style="display: none; grid-column: 2 / 4;">
+                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                    <header class="feed-header alt-header">
+                        <div>
+                            <h1>Friends</h1>
+                            <p>Manage your connections</p>
+                        </div>
+                    </header>
+                    <div class="masonry-grid" style="column-count: 3;">
+                        <div class="glass-card new-post-st" style="text-align: center; padding: 20px;">
+                            <img src="https://i.pravatar.cc/150?img=59" alt="User"
+                                style="width: 80px; border-radius: 50%; border: 3px solid var(--primary);">
+                            <h4 style="margin-top: 10px;">David Park</h4>
+                            <a href="404.html" class="gradient-btn"
+                                style="width: 100%; margin-top: 15px; padding: 5px; display: block; text-decoration: none; text-align: center; color: white;">Message</a>
+                        </div>
+                        <div class="glass-card new-post-st" style="text-align: center; padding: 20px;">
+                            <img src="https://i.pravatar.cc/150?img=22" alt="User"
+                                style="width: 80px; border-radius: 50%; border: 3px solid var(--primary);">
+                            <h4 style="margin-top: 10px;">Davis Miller</h4>
+                            <a href="404.html" class="gradient-btn"
+                                style="width: 100%; margin-top: 15px; padding: 5px; display: block; text-decoration: none; text-align: center; color: white;">Message</a>
+                        </div>
+                        <div class="glass-card new-post-st" style="text-align: center; padding: 20px;">
+                            <img src="https://i.pravatar.cc/150?img=47" alt="User"
+                                style="width: 80px; border-radius: 50%; border: 3px solid var(--primary);">
+                            <h4 style="margin-top: 10px;">Silena G</h4>
+                            <a href="404.html" class="gradient-btn"
+                                style="width: 100%; margin-top: 15px; padding: 5px; display: block; text-decoration: none; text-align: center; color: white;">Message</a>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <div id="content-media" class="content-section" style="display: none; grid-column: 2 / 4;">
+                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                    <header class="feed-header alt-header">
+                        <div>
+                            <h1>Media Library</h1>
+                            <p>Your saved photos and videos</p>
+                        </div>
+                    </header>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <img class="glass-card"
+                            src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&q=80"
+                            style="width: 100%; height: 200px; object-fit: cover;">
+                        <img class="glass-card"
+                            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80"
+                            style="width: 100%; height: 200px; object-fit: cover;">
+                    </div>
+                </main>
+            </div>
+
+            <div id="content-settings" class="content-section" style="display: none; grid-column: 2 / 4;">
+                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                    <header class="feed-header alt-header">
+                        <div>
+                            <h1>Settings</h1>
+                            <p>Manage your account preferences</p>
+                        </div>
+                    </header>
+                    <a href="404.html" style="text-decoration: none; color: inherit;">
+                        <div class="glass-card new-post-st" style="padding: 20px;">
+                            <h3>Profile Settings</h3>
+                            <p style="margin-top: 10px;">Update your avatar, username, and bio here.</p>
+                            <hr style="border: none; border-top: 1px solid rgba(150,150,150,0.2); margin: 15px 0;">
+                            <h3>Privacy</h3>
+                            <p style="margin-top: 10px;">Configure who can see your posts and send you messages.</p>
+                        </div>
+                    </a>
+                </main>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

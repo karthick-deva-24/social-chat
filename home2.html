@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page 2 - Dark Mode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-mode">
+
+    <!-- Loading Animation -->
+    <div id="loader" class="loader-container">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="dashboard-wrapper">
+        <div class="floating-avatar float-left">
+            <img src="https://i.pravatar.cc/150?img=33" alt="User">
+        </div>
+        <div class="floating-avatar float-right">
+            <img src="https://i.pravatar.cc/150?img=47" alt="User">
+        </div>
+
+        <div class="dashboard-container">
+            <!-- LEFT SIDEBAR -->
+            <aside class="sidebar">
+                <!-- APP LOGO -->
+                <div class="app-logo-section">
+                    <img src="images/stackly jpg.webp" alt="Stackly Logo" class="app-logo">
+                </div>
+                <div class="profile-section">
+                    <div class="profile-avatar-box">
+                        <div class="blob-bg"></div>
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Bogdan Nikitin" class="main-avatar">
+                    </div>
+                    <h2>Bogdan Nikitin</h2>
+                    <p>@nikitinteam</p>
+                </div>
+
+                <nav class="main-nav">
+                    <a href="#" class="nav-item active" data-target="content-newsfeed">
+                        <i class="fa-solid fa-compass"></i>
+                        <span>News Feed</span>
+                    </a>
+                    <a href="#" class="nav-item" data-target="content-messages">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>Messages</span>
+                        <span class="badge">6</span>
+                    </a>
+                    <a href="#" class="nav-item" data-target="content-forums">
+                        <i class="fa-solid fa-users-rectangle"></i>
+                        <span>Forums</span>
+                    </a>
+                    <a href="#" class="nav-item" data-target="content-friends">
+                        <i class="fa-solid fa-user-group"></i>
+                        <span>Friends</span>
+                        <span class="badge">3</span>
+                    </a>
+                    <a href="#" class="nav-item" data-target="content-media">
+                        <i class="fa-solid fa-photo-film"></i>
+                        <span>Media</span>
+                    </a>
+                    <a href="#" class="nav-item" data-target="content-settings">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="login.html" class="nav-item">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span>Login</span>
+                    </a>
+                </nav>
+
+                <div class="theme-switcher">
+                    <p class="theme-title">Theme</p>
+                    <button id="theme-toggle" class="theme-btn active">
+                        <i class="fa-solid fa-moon" style="width: 20px;"></i> Dark Mode
+                    </button>
+                    <a href="index.html" class="theme-btn" style="margin-top: 10px;">
+                        <i class="fa-solid fa-list" style="width: 20px;"></i> Home 1
+                    </a>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-blob"></div>
+                    <div class="download-content">
+                        <img src="https://i.pravatar.cc/150?img=32" alt="mini" class="mini-avatar pos-1">
+                        <img src="https://i.pravatar.cc/150?img=68" alt="mini" class="mini-avatar pos-2">
+                        <img src="https://i.pravatar.cc/150?img=44" alt="mini" class="mini-avatar pos-3">
+                        <p>Download the App</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT AREA WRAPPER -->
+            <div id="content-newsfeed" class="content-section active" style="display: contents;">
+                <!-- MAIN FEED (NEW LAYOUT) -->
+                <main class="feed masonry-feed">
+                    <header class="feed-header alt-header">
+                        <div>
+                            <h1>Home 2</h1>
+                            <p>Explore exclusive content, creators, and new animations</p>
+                        </div>
+                    </header>
+
+                    <!-- FEATURED CREATORS CAROUSEL -->
+                    <div class="featured-creators">
+                        <a href="404.html" style="text-decoration: none; color: inherit;">
+                            <div class="creator-card">
+                                <div class="creator-bg"
+                                    style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=300&q=80');">
+                                </div>
+                                <img src="https://i.pravatar.cc/150?img=12" alt="Creator">
+                                <h4>Alex Chen</h4>
+                                <span>3D Artist</span>
+                            </div>
+                        </a>
+                        <a href="404.html" style="text-decoration: none; color: inherit;">
+                            <div class="creator-card">
+                                <div class="creator-bg"
+                                    style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&q=80');">
+                                </div>
+                                <img src="https://i.pravatar.cc/150?img=33" alt="Creator">
+                                <h4>Samia Al</h4>
+                                <span>Tech Vlogger</span>
+                            </div>
+                        </a>
+                        <a href="404.html" style="text-decoration: none; color: inherit;">
+                            <div class="creator-card">
+                                <div class="creator-bg"
+                                    style="background-image: url('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=300&q=80');">
+                                </div>
+                                <img src="https://i.pravatar.cc/150?img=59" alt="Creator">
+                                <h4>David Park</h4>
+                                <span>Photographer</span>
+                            </div>
+                        </a>
+                        <a href="404.html" style="text-decoration: none; color: inherit;">
+                            <div class="creator-card">
+                                <div class="creator-bg"
+                                    style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=300&q=80');">
+                                </div>
+                                <img src="https://i.pravatar.cc/150?img=68" alt="Creator">
+                                <h4>Elena R.</h4>
+                                <span>Developer</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- MASONRY GRID LAYOUT -->
+                    <div class="masonry-grid">
+
+                        <!-- NEW POST STRUCTURE 1 -->
+                        <div class="glass-card new-post-st">
+                            <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=600&q=80"
+                                alt="Space" class="hero-img">
+                            <div class="new-post-content">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="new-user-row">
+                                        <img src="https://i.pravatar.cc/150?img=11" alt="Author">
+                                        <div>
+                                            <h5>Mark Johnson</h5>
+                                            <span>Just now</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <p>Just visited the new art gallery downtown! Absolutely stunning pieces. 🎨✨</p>
+                                <div class="action-bar">
+                                    <button><i class="fa-solid fa-fire"></i> 1.2k</button>
+                                    <button><i class="fa-solid fa-share"></i> Share</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NEW POST STRUCTURE 2 -->
+                        <div class="glass-card new-post-st">
+                            <div class="new-post-content">
+                                <h3 class="quote-text">"Design is not just what it looks like and feels like. Design is
+                                    how
+                                    it works."</h3>
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="new-user-row mt-3">
+                                        <img src="https://i.pravatar.cc/150?img=4" alt="Author">
+                                        <div>
+                                            <h5>Sarah Jenkins</h5>
+                                            <span>2 hours ago</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- NEW POST STRUCTURE 3 -->
+                        <div class="glass-card new-post-st p-0">
+                            <div class="video-mockup">
+                                <i class="fa-solid fa-play play-btn"></i>
+                                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&q=80"
+                                    alt="Video cover">
+                            </div>
+                            <div class="new-post-content">
+                                <p>My latest vlog is up! Watch me travel across the continent.</p>
+                            </div>
+                        </div>
+
+                        <!-- NEW POST STRUCTURE 4 -->
+                        <div class="glass-card new-post-st">
+                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80" alt="Design"
+                                class="hero-img">
+                            <div class="new-post-content">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="new-user-row">
+                                        <img src="https://i.pravatar.cc/150?img=12" alt="Author">
+                                        <div>
+                                            <h5>Jessica Smith</h5>
+                                            <span>3 hours ago</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <p>Loving the new retro-modern design trends popping up this year! 👾 Who else is a fan?
+                                </p>
+                                <div class="action-bar">
+                                    <button><i class="fa-solid fa-fire"></i> 3.4k</button>
+                                    <button><i class="fa-solid fa-share"></i> Share</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NEW POST STRUCTURE 5 -->
+                        <div class="glass-card new-post-st">
+                            <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=600&q=80"
+                                alt="Photography" class="hero-img">
+                            <div class="new-post-content">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="new-user-row">
+                                        <img src="https://i.pravatar.cc/150?img=59" alt="Author">
+                                        <div>
+                                            <h5>David Park</h5>
+                                            <span>5 hours ago</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <p>Caught this incredible shot at golden hour today. Photography is all about patience!
+                                    📷🌅</p>
+                                <div class="action-bar">
+                                    <button><i class="fa-solid fa-fire"></i> 5.1k</button>
+                                    <button><i class="fa-solid fa-share"></i> Share</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NEW POST STRUCTURE 6 -->
+                        <div class="glass-card new-post-st">
+                            <div class="new-post-content">
+                                <h3 class="quote-text">"Innovation distinguishes between a leader and a follower."</h3>
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="new-user-row mt-3">
+                                        <img src="https://i.pravatar.cc/150?img=68" alt="Author">
+                                        <div>
+                                            <h5>Elena R.</h5>
+                                            <span>8 hours ago</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- NEW POST STRUCTURE 7 -->
+                        <div class="glass-card new-post-st p-0">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80"
+                                alt="Style" class="hero-img" style="border-radius: 20px 20px 0 0;">
+                            <div class="new-post-content">
+                                <a href="404.html" style="text-decoration: none; color: inherit;">
+                                    <div class="new-user-row">
+                                        <img src="https://i.pravatar.cc/150?img=33" alt="Author">
+                                        <div>
+                                            <h5>Mia Davis</h5>
+                                            <span>1 day ago</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <p>Trying out some new autumn fits. What do you guys think? 🍂🧥</p>
+                            </div>
+                        </div>
+
+                        <!-- CREATOR PANEL -->
+                        <div class="glass-card create-panel">
+                            <h3>What's on your mind?</h3>
+                            <textarea placeholder="Type something cool..."></textarea>
+                            <div class="create-footer">
+                                <div class="icons">
+                                    <i class="fa-solid fa-camera"></i>
+                                    <i class="fa-solid fa-video"></i>
+                                    <i class="fa-solid fa-microphone"></i>
+                                </div>
+                                <button class="gradient-btn">Publish</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </main>
+
+                <!-- RIGHT SIDEBAR (NEW LAYOUT) -->
+                <aside class="right-sidebar alt-sidebar">
+
+                    <!-- TRENDING CARD -->
+                    <div class="glass-card trending-card">
+                        <h3>Trending Topics</h3>
+                        <ul class="trend-list">
+                            <li>
+                                <span class="rank">#1</span>
+                                <div class="trend-info">
+                                    <h4>#WebDesign</h4>
+                                    <span>24.5k posts</span>
+                                </div>
+                                <button class="follow-rounded" onclick="window.location.href='404.html'"><i
+                                        class="fa-solid fa-plus"></i></button>
+                            </li>
+                            <li>
+                                <span class="rank">#2</span>
+                                <div class="trend-info">
+                                    <h4>#Tech2026</h4>
+                                    <span>18.2k posts</span>
+                                </div>
+                                <button class="follow-rounded" onclick="window.location.href='404.html'"><i
+                                        class="fa-solid fa-plus"></i></button>
+                            </li>
+                            <li>
+                                <span class="rank">#3</span>
+                                <div class="trend-info">
+                                    <h4>#Photography</h4>
+                                    <span>12.1k posts</span>
+                                </div>
+                                <button class="follow-rounded" onclick="window.location.href='404.html'"><i
+                                        class="fa-solid fa-plus"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- NEW COMPACT STORIES -->
+                    <div class="glass-card story-bubbles">
+                        <h3>Highlights</h3>
+                        <div class="bubble-row">
+                            <a href="404.html" style="text-decoration: none; color: inherit;">
+                                <div class="bubble add-bubble">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </a>
+                            <a href="404.html" style="text-decoration: none; color: inherit;">
+                                <div class="bubble active-bubble">
+                                    <img src="https://i.pravatar.cc/150?img=1" alt="s1">
+                                </div>
+                            </a>
+                            <a href="404.html" style="text-decoration: none; color: inherit;">
+                                <div class="bubble">
+                                    <img src="https://i.pravatar.cc/150?img=2" alt="s2">
+                                </div>
+                            </a>
+                            <a href="404.html" style="text-decoration: none; color: inherit;">
+                                <div class="bubble active-bubble">
+                                    <img src="https://i.pravatar.cc/150?img=3" alt="s3">
+                                </div>
+                            </a>
+                            <a href="404.html" style="text-decoration: none; color: inherit;">
+                                <div class="bubble">
+                                    <img src="https://i.pravatar.cc/150?img=4" alt="s4">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </aside>
+            </div> <!-- End Newsfeed wrapper -->
+
+            <!-- OTHER SECTIONS (Hidden by default) -->
+            <div id="content-messages" class="content-section" style="display: none; grid-column: 2 / 4;">
+                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                    <header class="feed-header alt-header">
+                        <div>
+                            <h1>Messages</h1>
+                            <p>Read your latest conversations</p>
+                        </div>
+                    </header>
+                    <a href="404.html" style="text-decoration: none; color: inherit;">
+                        <div class="glass-card new-post-st" style="display: flex; gap: 15px; align-items: center;">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="Avatar"
+                                style="width: 50px; border-radius: 50%;">
+                            <div style="flex: 1;">
+                                <h4 style="margin: 0; color: #f8fafc;">Alice Wonderland</h4>
+                                <p style="margin: 0; font-size: 0.85rem;">Hey, are we still meeting tomorrow?</p>
+                            </div>
+                            <span class="badge"
+                                style="background: var(--pink-accent); color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem;">2
+                                new</span>
+                        </div>
+                    </a>
+                    <a href="404.html" style="text-decoration: none; color: inherit;">
+                        <div class="glass-card new-post-st" style="display: flex; gap: 15px; align-items: center;">
+                            <img src="https://i.pravatar.cc/150?img=33" alt="Avatar"
+                                style="width: 50px; border-radius: 50%;">
+                            <div style="flex: 1;">
+                                <h4 style="margin: 0; color: #f8fafc;">Team Alpha Group</h4>
+                                <p style="margin: 0; font-size: 0.85rem;">Bob: I just uploaded the files to the drive.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </main>
+            </div>
+
+            <div id="content-forums" class="content-section" style="display: none; grid-column: 2 / 4;">
+                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                    <header class="feed-header alt-header">
+                        <div>
+                            <h1>Forums</h1>
+                            <p>Join the community discussions</p>
+                        </div>
+                    </header>
+                    <a href="404.html" style="text-decoration: none; color: inherit;">
+                        <div class="glass-card new-post-st" style="padding: 20px;">
+                            <h3 style="color: var(--primary); margin-bottom: 10px;">Web Design Feedback <span
+                                    style="font-size: 0.8rem; color: #94a3b8; font-weight: normal;">• 14 replies</span>
+                            </h3>
+                            <p>I'm looking for some feedback on my new portfolio layout...</p>
+                        </div>
+                    </a>
+                    <a href="404.html" style="text-decoration: none; color: inherit;">
+                        <div class="glass-card new-post-st" style="padding: 20px;">
+                            <h3 style="color: var(--primary); margin-bottom: 10px;">Tech Support Q&A <span
+                                    style="font-size: 0.8rem; color: #94a3b8; font-weight: normal;">• 205 topics</span>
+                            </h3>
+                            <p>Help with setting up the new development environment...</p>
+                        </div>
+                    </a>
+                </main>
+            </div>
+
+            <div id="content-friends" class="content-section" style="display: none; grid-column: 2 / 4;">
+                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                    <header class="feed-header alt-header">
+                        <div>
+                            <h1>Friends</h1>
+                            <p>Manage your connections</p>
+                        </div>
+                    </header>
+                    <div class="masonry-grid" style="column-count: 3;">
+                        <div class="glass-card new-post-st" style="text-align: center; padding: 20px;">
+                            <img src="https://i.pravatar.cc/150?img=59" alt="User"
+                                style="width: 80px; border-radius: 50%; border: 3px solid var(--primary);">
+                            <h4 style="margin-top: 10px;">David Park</h4>
+                            <a href="404.html" class="gradient-btn"
+                                style="width: 100%; margin-top: 15px; padding: 5px; display: block; text-decoration: none; text-align: center; color: white;">Message</a>
+                        </div>
+                        <div class="glass-card new-post-st" style="text-align: center; padding: 20px;">
+                            <img src="https://i.pravatar.cc/150?img=22" alt="User"
+                                style="width: 80px; border-radius: 50%; border: 3px solid var(--primary);">
+                            <h4 style="margin-top: 10px;">Davis Miller</h4>
+                            <a href="404.html" class="gradient-btn"
+                                style="width: 100%; margin-top: 15px; padding: 5px; display: block; text-decoration: none; text-align: center; color: white;">Message</a>
+                        </div>
+                        <div class="glass-card new-post-st" style="text-align: center; padding: 20px;">
+                            <img src="https://i.pravatar.cc/150?img=47" alt="User"
+                                style="width: 80px; border-radius: 50%; border: 3px solid var(--primary);">
+                            <h4 style="margin-top: 10px;">Silena G</h4>
+                            <a href="404.html" class="gradient-btn"
+                                style="width: 100%; margin-top: 15px; padding: 5px; display: block; text-decoration: none; text-align: center; color: white;">Message</a>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <div id="content-media" class="content-section" style="display: none; grid-column: 2 / 4;">
+                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                    <header class="feed-header alt-header">
+                        <div>
+                            <h1>Media Library</h1>
+                            <p>Your saved photos and videos</p>
+                        </div>
+                    </header>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <a href="404.html"><img class="glass-card"
+                                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&q=80"
+                                style="width: 100%; height: 200px; object-fit: cover;"></a>
+                        <a href="404.html"><img class="glass-card"
+                                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80"
+                                style="width: 100%; height: 200px; object-fit: cover;"></a>
+                    </div>
+                </main>
+            </div>
+
+            <div id="content-settings" class="content-section" style="display: none; grid-column: 2 / 4;">
+                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                    <header class="feed-header alt-header">
+                        <div>
+                            <h1>Settings</h1>
+                            <p>Manage your account preferences</p>
+                        </div>
+                    </header>
+                    <a href="404.html" style="text-decoration: none; color: inherit;">
+                        <div class="glass-card new-post-st" style="padding: 20px;">
+                            <h3>Profile Settings</h3>
+                            <p style="margin-top: 10px;">Update your avatar, username, and bio here.</p>
+                            <hr style="border: none; border-top: 1px solid rgba(150,150,150,0.2); margin: 15px 0;">
+                            <h3>Privacy</h3>
+                            <p style="margin-top: 10px;">Configure who can see your posts and send you messages.</p>
+                        </div>
+                    </a>
+                </main>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

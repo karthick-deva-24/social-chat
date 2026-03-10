@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-main);
+            padding: 50px 20px;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--pink-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .error-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+
+        .error-btn {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary), #818cf8);
+            color: white;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .error-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(79, 70, 229, 0.4);
+            color: white;
+        }
+
+        @media (max-width: 992px) {
+            .error-container {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard-wrapper">
+        <div class="floating-avatar float-left">
+            <img src="https://i.pravatar.cc/150?img=33" alt="User">
+        </div>
+        <div class="floating-avatar float-right">
+            <img src="https://i.pravatar.cc/150?img=47" alt="User">
+        </div>
+
+        <div class="dashboard-container">
+            <!-- LEFT SIDEBAR -->
+            <aside class="sidebar">
+                <!-- APP LOGO -->
+                <div class="app-logo-section">
+                    <img src="images/stackly jpg.webp" alt="Stackly Logo" class="app-logo">
+                </div>
+
+                <div class="profile-section">
+                    <div class="profile-avatar-box">
+                        <div class="blob-bg"></div>
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Bogdan Nikitin" class="main-avatar">
+                    </div>
+                    <h2>Bogdan Nikitin</h2>
+                    <p>@nikitinteam</p>
+                </div>
+
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-compass"></i>
+                        <span>News Feed</span>
+                    </a>
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>Messages</span>
+                        <span class="badge">6</span>
+                    </a>
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-users-rectangle"></i>
+                        <span>Forums</span>
+                    </a>
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-user-group"></i>
+                        <span>Friends</span>
+                        <span class="badge">3</span>
+                    </a>
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-photo-film"></i>
+                        <span>Media</span>
+                    </a>
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+
+                <div class="theme-switcher">
+                    <p class="theme-title">Theme</p>
+                    <button id="theme-toggle" class="theme-btn">
+                        <i class="fa-solid fa-moon" style="width: 20px;"></i> Dark Mode
+                    </button>
+                    <a href="index.html" class="theme-btn" style="margin-top: 10px;">
+                        <i class="fa-solid fa-list" style="width: 20px;"></i> Home 1
+                    </a>
+                    <a href="home2.html" class="theme-btn" style="margin-top: 10px;">
+                        <i class="fa-solid fa-table-cells" style="width: 20px;"></i> Home 2
+                    </a>
+                </div>
+            </aside>
+
+            <!-- 404 CONTENT AREA -->
+            <div id="content-404" class="content-section" style="display: contents;">
+                <main class="feed masonry-feed"
+                    style="max-width: 800px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: center; height: 100%;">
+                    <div class="error-container">
+                        <div class="error-code">404</div>
+                        <div class="error-text">Oops! The page you're looking for doesn't exist.</div>
+                        <a href="index.html" class="error-btn"><i class="fa-solid fa-house"></i> Go Back Home</a>
+                    </div>
+                </main>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
