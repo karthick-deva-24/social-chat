@@ -119,27 +119,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-item');
     const contentSections = document.querySelectorAll('.content-section');
 
+    function switchTab(targetId) {
+        if (!targetId) return;
+        
+        navItems.forEach(nav => {
+            if (nav.getAttribute('data-target') === targetId) {
+                nav.classList.add('active');
+            } else {
+                nav.classList.remove('active');
+            }
+        });
+
+        contentSections.forEach(sec => {
+            sec.style.display = 'none';
+            sec.classList.remove('fade-enter');
+        });
+
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+            targetEl.style.display = targetId === 'content-newsfeed' ? 'contents' : 'block';
+            void targetEl.offsetWidth; // Trigger reflow
+            targetEl.classList.add('fade-enter');
+            
+            // Scroll to top of content for better UX on mobile
+            if (window.innerWidth <= 768) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    }
+
     navItems.forEach(item => {
         item.addEventListener('click', function (e) {
             const targetId = this.getAttribute('data-target');
             if (targetId) {
                 e.preventDefault();
-                navItems.forEach(nav => nav.classList.remove('active'));
-                this.classList.add('active');
-
-                contentSections.forEach(sec => {
-                    sec.style.display = 'none';
-                    sec.classList.remove('fade-enter');
-                });
-                const targetEl = document.getElementById(targetId);
-                if (targetEl) {
-                    targetEl.style.display = targetId === 'content-newsfeed' ? 'contents' : 'block';
-                    void targetEl.offsetWidth; // Trigger reflow
-                    targetEl.classList.add('fade-enter');
-                }
+                switchTab(targetId);
+                // Update URL hash without jumping
+                history.pushState(null, null, '#' + targetId.replace('content-', ''));
             }
         });
     });
+
+    // Handle Hash Navigation (e.g., from footer links on other pages)
+    function handleHash() {
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+            const targetId = 'content-' + hash;
+            switchTab(targetId);
+        }
+    }
+
+    window.addEventListener('hashchange', handleHash);
+    handleHash(); // Initial check
 
     // 4. Input 'Send' Interaction (News Feed Creator)
     const sendBtn = document.querySelector('.send-btn');
