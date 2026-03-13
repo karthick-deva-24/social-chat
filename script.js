@@ -47,10 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const fireBtn = e.target.closest('.action-bar button:first-child');
         if (fireBtn && fireBtn.querySelector('.fa-fire')) {
             e.preventDefault();
-            if (fireBtn.style.color === 'var(--primary)' || fireBtn.style.color === 'rgb(79, 70, 229)') {
-                fireBtn.style.color = 'var(--text-muted)';
-            } else {
+            fireBtn.classList.toggle('active-fire');
+            if (fireBtn.classList.contains('active-fire')) {
                 fireBtn.style.color = 'var(--primary)';
+            } else {
+                fireBtn.style.color = 'var(--text-muted)';
             }
             return;
         }
@@ -70,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         commentArea.className = 'comment-section-wrapper';
                         commentArea.innerHTML = `
                             <div class="comment-input-area">
-                                <img src="https://i.pravatar.cc/150?img=11" alt="Me" class="comment-avatar">
+                                <img src="images/refresh_avatar_11.webp" alt="Me" class="comment-avatar">
                                 <input type="text" placeholder="Write a comment..." class="comment-input-box">
                                 <button class="comment-submit-btn" onclick="window.location.href='404.html'">Send</button>
                             </div>
@@ -223,8 +224,8 @@ document.addEventListener('DOMContentLoaded', () => {
             isLoading = true;
             loader.style.display = 'block';
 
-            let feedContainer = document.querySelector('#content-newsfeed .feed-content-pane[style*="display: block"]') 
-                               || document.querySelector('#content-newsfeed .feed-content-pane.active-pane')
+            let feedContainer = document.querySelector('#content-newsfeed .feed-content-pane.active-pane')
+                               || document.querySelector('#content-newsfeed .feed-content-pane:not([style*="display: none"])')
                                || document.querySelector('#content-newsfeed .masonry-grid');
 
             if (!feedContainer) {
