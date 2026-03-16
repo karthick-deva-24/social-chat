@@ -91,7 +91,70 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return;
         }
+
+        // E. More Button Toggle (Dropdown)
+        const moreBtn = e.target.closest('.more-btn');
+        if (moreBtn) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Close any other open ones first
+            document.querySelectorAll('.more-btn-dropdown.open').forEach(d => {
+                if (!moreBtn.parentElement.contains(d)) {
+                    d.classList.remove('open');
+                    const post = d.closest('.post-card');
+                    if (post) post.classList.remove('menu-open');
+                }
+            });
+
+            // Ensure dropdown exists
+            let dropdown = moreBtn.parentElement.querySelector('.more-btn-dropdown');
+            if (!dropdown) {
+                // If it's not wrapped yet, wrap it dynamically for better UX
+                if (!moreBtn.parentElement.classList.contains('more-wrapper')) {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'more-wrapper';
+                    moreBtn.parentNode.insertBefore(wrapper, moreBtn);
+                    wrapper.appendChild(moreBtn);
+                    
+                    dropdown = document.createElement('div');
+                    dropdown.className = 'more-btn-dropdown';
+                    dropdown.innerHTML = `
+                        <a href="404.html" class="dropdown-item"><i class="fa-regular fa-bookmark"></i> Save Post</a>
+                        <a href="404.html" class="dropdown-item"><i class="fa-solid fa-ban"></i> Not Interested</a>
+                        <a href="404.html" class="dropdown-item"><i class="fa-regular fa-flag"></i> Report Post</a>
+                        <a href="404.html" class="dropdown-item hide-post-trigger" style="color: var(--red-like);"><i class="fa-solid fa-trash-can"></i> Hide Post</a>
+                    `;
+                    wrapper.appendChild(dropdown);
+                }
+            }
+
+            // Toggle open class
+            if (dropdown) {
+                const isOpen = dropdown.classList.toggle('open');
+                const post = dropdown.closest('.post-card');
+                if (post) {
+                    if (isOpen) post.classList.add('menu-open');
+                    else post.classList.remove('menu-open');
+                }
+            }
+            return;
+        }
+
+        // Close dropdowns if clicking elsewhere
+        if (!e.target.closest('.more-btn-dropdown')) {
+            document.querySelectorAll('.more-btn-dropdown.open').forEach(d => {
+                d.classList.remove('open');
+                const post = d.closest('.post-card');
+                if (post) post.classList.remove('menu-open');
+            });
+        }
     });
+
+    // Handle Scroll Closing (Optional but good for fixed headers/sidebars)
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('.more-btn-dropdown.open').forEach(d => d.classList.remove('open'));
+    }, { passive: true });
 
     // 2. Feed Tabs Logic (Home 1)
     const tabs = document.querySelectorAll('.feed-tabs .tab');
@@ -118,10 +181,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Navigation Tab Switching
     const navItems = document.querySelectorAll('.nav-item');
     const contentSections = document.querySelectorAll('.content-section');
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
 
     function switchTab(targetId) {
         if (!targetId) return;
         
+        // Update sidebar active states
         navItems.forEach(nav => {
             if (nav.getAttribute('data-target') === targetId) {
                 nav.classList.add('active');
@@ -131,27 +197,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         contentSections.forEach(sec => {
-            sec.style.display = 'none';
-            sec.classList.remove('fade-enter');
+            sec.classList.remove('active', 'fade-enter');
         });
 
         const targetEl = document.getElementById(targetId);
         if (targetEl) {
-            targetEl.style.display = targetId === 'content-newsfeed' ? 'contents' : 'block';
-            void targetEl.offsetWidth; // Trigger reflow
-            targetEl.classList.add('fade-enter');
+            targetEl.classList.add('active', 'fade-enter');
             
-            // Scroll to top of content for better UX on mobile
-            if (window.innerWidth <= 768) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Trigger reflow
+            void targetEl.offsetWidth; 
+
+            // Scroll to the content area on mobile
+            if (window.innerWidth <= 1024) {
+                const contentArea = targetEl;
+                const offset = contentArea.offsetTop - 100; // Leave some space for the top nav
+                window.scrollTo({ top: offset > 0 ? offset : 0, behavior: 'smooth' });
             }
         }
     }
 
+    // Attach to nav items
     navItems.forEach(item => {
         item.addEventListener('click', function (e) {
             const targetId = this.getAttribute('data-target');
-            if (targetId) {
+            if (targetId && targetId !== '#') {
                 e.preventDefault();
                 switchTab(targetId);
                 // Update URL hash without jumping
@@ -159,6 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
 
     // Handle Hash Navigation (e.g., from footer links on other pages)
     function handleHash() {
@@ -195,8 +265,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const updateThemeUI = (isDark) => {
             document.body.classList.toggle('dark-mode', isDark);
             themeBtn.innerHTML = isDark 
-                ? '<i class="fa-solid fa-sun" style="width: 20px;"></i> Light Mode'
-                : '<i class="fa-solid fa-moon" style="width: 20px;"></i> Dark Mode';
+                ? '<i class="fa-solid fa-sun" style="width: 20px;"></i> <span>Light Mode</span>'
+                : '<i class="fa-solid fa-moon" style="width: 20px;"></i> <span>Dark Mode</span>';
             themeBtn.classList.toggle('active', !isDark);
         };
 
@@ -280,7 +350,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         fragment.appendChild(clone);
                     }
                     if (isMasonry) {
-                        feedContainer.insertBefore(fragment, loader);
+                        // For Masonry, we need to append to the grid carefully
+                        fragment.childNodes.forEach(node => {
+                            if (node.nodeType === 1) { // ELEMENT_NODE
+                                feedContainer.insertBefore(node.cloneNode(true), loader);
+                            }
+                        });
                     } else {
                         feedContainer.appendChild(fragment);
                     }
@@ -308,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 commentSection.className = 'comment-section-wrapper';
                 commentSection.innerHTML = `
                     <div class="comment-input-area">
-                        <img src="https://i.pravatar.cc/150?img=11" alt="Me" class="comment-avatar">
+                        <img src="images/refresh_avatar_11.webp" alt="Me" class="comment-avatar">
                         <input type="text" placeholder="Write a comment..." class="comment-input-box">
                         <button class="comment-submit-btn" onclick="window.location.href='404.html'">Send</button>
                     </div>

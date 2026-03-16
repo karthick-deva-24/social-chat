@@ -17,6 +17,7 @@
         <div class="loader-spinner"></div>
     </div>
 
+
     <div class="dashboard-wrapper">
         <div class="dashboard-container">
             <!-- LEFT SIDEBAR -->
@@ -81,7 +82,7 @@
                 <div class="theme-switcher">
                     <p class="theme-title">Theme</p>
                     <button id="theme-toggle" class="theme-btn active">
-                        <i class="fa-solid fa-moon" style="width: 20px;"></i> Dark Mode
+                        <i class="fa-solid fa-moon" style="width: 20px;"></i> <span>Dark Mode</span>
                     </button>
                     <a href="index.html" class="theme-btn" style="margin-top: 10px;">
                         <i class="fa-solid fa-list" style="width: 20px;"></i> Home 1
@@ -91,7 +92,7 @@
             </aside>
 
             <!-- MAIN CONTENT AREA WRAPPER -->
-            <div id="content-newsfeed" class="content-section active" style="display: contents;">
+            <div id="content-newsfeed" class="content-section active" style="grid-column: 2 / 4;">
                 <!-- MAIN FEED (NEW LAYOUT) -->
                 <main class="feed masonry-feed">
                     <header class="feed-header alt-header">
@@ -106,7 +107,7 @@
                         <a href="404.html" style="text-decoration: none; color: inherit;">
                             <div class="creator-card">
                                 <div class="creator-bg"
-                                    style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=300&q=80');">
+                                    style="background-image: url('images/unsplash_photo-1550745165-9bc0b252726f.webp');">
                                 </div>
                                 <img src="images/refresh_avatar_1.webp" alt="Creator">
                                 <h4>Alex Chen</h4>
@@ -116,7 +117,7 @@
                         <a href="404.html" style="text-decoration: none; color: inherit;">
                             <div class="creator-card">
                                 <div class="creator-bg"
-                                    style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&q=80');">
+                                    style="background-image: url('images/unsplash_photo-1518770660439-4636190af475.webp');">
                                 </div>
                                 <img src="images/avatar_33.webp" alt="Creator">
                                 <h4>Samia Al</h4>
@@ -126,7 +127,7 @@
                         <a href="404.html" style="text-decoration: none; color: inherit;">
                             <div class="creator-card">
                                 <div class="creator-bg"
-                                    style="background-image: url('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=300&q=80');">
+                                    style="background-image: url('images/unsplash_photo-1522075469751-3a6694fb2f61.webp');">
                                 </div>
                                 <img src="images/avatar_5.webp" alt="Creator">
                                 <h4>David Park</h4>
@@ -155,11 +156,14 @@
                             <div class="new-post-content">
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row">
-                                        <img src="images/refresh_avatar_6.webp" alt="Author">
-                                        <div>
-                                            <h5>Mark Johnson</h5>
-                                            <span>Just now</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/refresh_avatar_6.webp" alt="Author">
+                                            <div>
+                                                <h5>Mark Johnson</h5>
+                                                <span>Just now</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                                 <p>Just visited the new art gallery downtown! Absolutely stunning pieces. 🎨✨</p>
@@ -178,11 +182,14 @@
                                     it works."</h3>
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row mt-3">
-                                        <img src="images/avatar_4.webp" alt="Author">
-                                        <div>
-                                            <h5>Sarah Jenkins</h5>
-                                            <span>2 hours ago</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/avatar_4.webp" alt="Author">
+                                            <div>
+                                                <h5>Sarah Jenkins</h5>
+                                                <span>2 hours ago</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                             </div>
@@ -197,11 +204,14 @@
                             <div class="new-post-content">
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row">
-                                        <img src="images/avatar_60.webp" alt="Author">
-                                        <div>
-                                            <h5>Video Creator</h5>
-                                            <span>2 hours ago</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/avatar_60.webp" alt="Author">
+                                            <div>
+                                                <h5>Video Creator</h5>
+                                                <span>2 hours ago</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                                 <p>My latest video is up! Watch me travel across the continent. 🌍✈️</p>
@@ -218,11 +228,14 @@
                             <div class="new-post-content">
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row">
-                                        <img src="images/refresh_avatar_2.webp" alt="Author">
-                                        <div>
-                                            <h5>Jessica Smith</h5>
-                                            <span>3 hours ago</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/refresh_avatar_2.webp" alt="Author">
+                                            <div>
+                                                <h5>Jessica Smith</h5>
+                                                <span>3 hours ago</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                                 <p>Loving the new retro-modern design trends popping up this year! 👾 Who else is a fan?
@@ -241,11 +254,14 @@
                             <div class="new-post-content">
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row">
-                                        <img src="images/refresh_avatar_3.webp" alt="Author">
-                                        <div>
-                                            <h5>David Park</h5>
-                                            <span>5 hours ago</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/refresh_avatar_3.webp" alt="Author">
+                                            <div>
+                                                <h5>David Park</h5>
+                                                <span>5 hours ago</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                                 <p>Caught this incredible shot at golden hour today. Photography is all about patience!
@@ -263,11 +279,14 @@
                                 <h3 class="quote-text">"Innovation distinguishes between a leader and a follower."</h3>
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row mt-3">
-                                        <img src="images/refresh_avatar_4.webp" alt="Author">
-                                        <div>
-                                            <h5>Elena R.</h5>
-                                            <span>8 hours ago</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/refresh_avatar_4.webp" alt="Author">
+                                            <div>
+                                                <h5>Elena R.</h5>
+                                                <span>8 hours ago</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                             </div>
@@ -280,11 +299,14 @@
                             <div class="new-post-content">
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row">
-                                        <img src="images/refresh_avatar_5.webp" alt="Author">
-                                        <div>
-                                            <h5>Mia Davis</h5>
-                                            <span>1 day ago</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/refresh_avatar_5.webp" alt="Author">
+                                            <div>
+                                                <h5>Mia Davis</h5>
+                                                <span>1 day ago</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                                 <p>Trying out some new autumn fits. What do you guys think? 🍂🧥</p>
@@ -298,11 +320,14 @@
                             <div class="new-post-content">
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row">
-                                        <img src="images/refresh_avatar_6.webp" alt="Author">
-                                        <div>
-                                            <h5>Sarah Connor</h5>
-                                            <span>1.5 days ago</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/refresh_avatar_6.webp" alt="Author">
+                                            <div>
+                                                <h5>Sarah Connor</h5>
+                                                <span>1.5 days ago</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                                 <p>The mountains are calling and I must go! Weekend hike was absolutely breathtaking.
@@ -315,11 +340,14 @@
                             <div class="new-post-content">
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row">
-                                        <img src="images/refresh_avatar_1.webp" alt="Author">
-                                        <div>
-                                            <h5>Ivan Shevchenko</h5>
-                                            <span>2 days ago</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/refresh_avatar_1.webp" alt="Author">
+                                            <div>
+                                                <h5>Ivan Shevchenko</h5>
+                                                <span>2 days ago</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                                 <p>Just passed my AWS Solutions Architect certification! Time to celebrate! 🎉☁️</p>
@@ -337,11 +365,14 @@
                             <div class="new-post-content">
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row">
-                                        <img src="images/refresh_avatar_7.webp" alt="Author">
-                                        <div>
-                                            <h5>Chef Gordon</h5>
-                                            <span>3 days ago</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/refresh_avatar_7.webp" alt="Author">
+                                            <div>
+                                                <h5>Chef Gordon</h5>
+                                                <span>3 days ago</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                                 <p>This new pasta recipe is a game changer! 🍝🤌</p>
@@ -356,11 +387,14 @@
                             <div class="new-post-content">
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row">
-                                        <img src="images/refresh_avatar_7.webp" alt="Author">
-                                        <div>
-                                            <h5>Ivan Shevchenko</h5>
-                                            <span>Just now</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/refresh_avatar_7.webp" alt="Author">
+                                            <div>
+                                                <h5>Ivan Shevchenko</h5>
+                                                <span>Just now</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                                 <p>First post of the day! Getting ready for a big presentation later today. Wish me
@@ -381,11 +415,14 @@
                             <div class="new-post-content">
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row">
-                                        <img src="images/refresh_avatar_8.webp" alt="Author">
-                                        <div>
-                                            <h5>Video Creator</h5>
-                                            <span>Trending</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/refresh_avatar_8.webp" alt="Author">
+                                            <div>
+                                                <h5>Video Creator</h5>
+                                                <span>Trending</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                                 <p>My ultimate guide to web animations is finally live! Check out the video below. 🎥✨
@@ -400,17 +437,20 @@
 
                         <!-- NEW ANIMATED WEBP POST -->
                         <div class="glass-card new-post-st p-0" style="border: 2px solid var(--pink-accent);">
-                            <img src="https://mathiasbynens.be/demo/animated-webp-supported.webp" alt="Animated WebP"
+                            <img src="images/refresh_bg_2.webp" alt="Animated WebP"
                                 class="hero-img"
-                                style="border-radius: 20px 20px 0 0; max-height: 250px; object-fit: contain; background: #000;">
+                                style="border-radius: 20px 20px 0 0; max-height: 250px; object-fit: cover;">
                             <div class="new-post-content">
                                 <a href="404.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row">
-                                        <img src="images/refresh_avatar_8.webp" alt="Author">
-                                        <div>
-                                            <h5>Tech Explorer</h5>
-                                            <span>2 mins ago</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/refresh_avatar_8.webp" alt="Author">
+                                            <div>
+                                                <h5>Tech Explorer</h5>
+                                                <span>2 mins ago</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                                 <p>Checking out the new Animated WebP format support. Look at this incredible quality!
@@ -423,7 +463,7 @@
                         </div>
                     </div>
 
-                    <div id="feed-recents" class="feed-content-pane" style="display: none;">
+                    <div id="feed-empty" class="feed-content-pane" style="display: none;">
                         <a href="404.html" style="text-decoration: none; display: block;">
                             <div class="glass-card" style="padding: 40px; text-align: center; margin-bottom: 20px;">
                                 <i class="fa-solid fa-clock-rotate-left"
@@ -443,11 +483,14 @@
                             <div class="new-post-content">
                                 <a href="home2.html" style="text-decoration: none; color: inherit;">
                                     <div class="new-user-row">
-                                        <img src="images/stackly jpg.webp" alt="Admin">
-                                        <div>
-                                            <h5>Stackly Official</h5>
-                                            <span>Featured Post</span>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="images/stackly jpg.webp" alt="Admin">
+                                            <div>
+                                                <h5>Stackly Official</h5>
+                                                <span>Featured Post</span>
+                                            </div>
                                         </div>
+                                        <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                     </div>
                                 </a>
                                 <p>We just hit 1 million active users! Thank you to this amazing community for your
@@ -483,27 +526,6 @@
                         </div>
 
                     </div>
-                    
-                    <!-- Main Footer -->
-                    <footer class="main-footer">
-                        <a href="home2.html">
-                            <img src="images/stackly jpg.webp" alt="Stackly Logo" style="width: 100px; object-fit: contain; margin-bottom: 10px;">
-                        </a>
-                        <p>&copy; 2026 Social Media Platform</p>
-                        <div class="main-footer-links">
-                            <a href="home2.html">Home</a>
-                            <a href="login.html">Login</a>
-                            <a href="index.html#friends">Friends</a>
-                            <a href="index.html#forums">Forums</a>
-                            <a href="index.html#settings">Settings</a>
-                            <a href="index.html#dashboard">Dashboard</a>
-                        </div>
-                        <div class="main-footer-socials">
-                            <a href="404.html" class="tw"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="404.html" class="ig"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="404.html" class="fb"><i class="fa-brands fa-facebook"></i></a>
-                        </div>
-                    </footer>
 
                 </main>
 
@@ -560,28 +582,55 @@
                             </a>
                             <a href="404.html" style="text-decoration: none; color: inherit;">
                                 <div class="bubble">
-                                    <img src="images/refresh_avatar_2.webp" alt="s2">
+                                    <img src="images/avatar_33.webp" alt="s2">
                                 </div>
                             </a>
                             <a href="404.html" style="text-decoration: none; color: inherit;">
                                 <div class="bubble active-bubble">
-                                    <img src="images/refresh_avatar_3.webp" alt="s3">
+                                    <img src="images/refresh_avatar_6.webp" alt="s3">
                                 </div>
                             </a>
                             <a href="404.html" style="text-decoration: none; color: inherit;">
                                 <div class="bubble">
-                                    <img src="images/refresh_avatar_4.webp" alt="s4">
+                                    <img src="images/avatar_5.webp" alt="s4">
+                                </div>
+                            </a>
+                            <a href="404.html" style="text-decoration: none; color: inherit;">
+                                <div class="bubble active-bubble">
+                                    <img src="images/refresh_avatar_12.webp" alt="s5">
                                 </div>
                             </a>
                         </div>
                     </div>
 
+
                 </aside>
+
+                <!-- Main Footer (Moved to center bottom) -->
+                <footer class="main-footer">
+                    <a href="home2.html">
+                        <img src="images/stackly jpg.webp" alt="Stackly Logo" style="width: 100px; object-fit: contain; margin-bottom: 10px;">
+                    </a>
+                    <p>&copy; 2026 Social Media Platform</p>
+                    <div class="main-footer-links">
+                        <a href="home2.html">Home</a>
+                        <a href="login.html">Login</a>
+                        <a href="index.html#friends">Friends</a>
+                        <a href="index.html#forums">Forums</a>
+                        <a href="index.html#settings">Settings</a>
+                        <a href="index.html#dashboard">Dashboard</a>
+                    </div>
+                    <div class="main-footer-socials">
+                        <a href="404.html" class="tw"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="404.html" class="ig"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html" class="fb"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </footer>
             </div> <!-- End Newsfeed wrapper -->
 
             <!-- OTHER SECTIONS (Hidden by default) -->
             <div id="content-messages" class="content-section" style="display: none; grid-column: 2 / 4;">
-                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                <main class="feed masonry-feed" style="margin: 0 auto; width: 100%;">
                     <header class="feed-header alt-header">
                         <div>
                             <h1>Messages</h1>
@@ -662,7 +711,7 @@
             </div>
 
             <div id="content-forums" class="content-section" style="display: none; grid-column: 2 / 4;">
-                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                <main class="feed masonry-feed" style="margin: 0 auto; width: 100%;">
                     <header class="feed-header alt-header">
                         <div>
                             <h1>Forums</h1>
@@ -691,7 +740,7 @@
             </div>
 
             <div id="content-friends" class="content-section" style="display: none; grid-column: 2 / 4;">
-                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                <main class="feed masonry-feed" style="margin: 0 auto; width: 100%;">
                     <header class="feed-header alt-header">
                         <div>
                             <h1>Friends</h1>
@@ -728,7 +777,7 @@
             </div>
 
             <div id="content-media" class="content-section" style="display: none; grid-column: 2 / 4;">
-                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                <main class="feed masonry-feed" style="margin: 0 auto; width: 100%;">
                     <header class="feed-header alt-header">
                         <div>
                             <h1>Media Library</h1>
@@ -745,7 +794,7 @@
             </div>
 
             <div id="content-settings" class="content-section" style="display: none; grid-column: 2 / 4;">
-                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                <main class="feed masonry-feed" style="margin: 0 auto; width: 100%;">
                     <header class="feed-header alt-header">
                         <div>
                             <h1>Settings</h1>
@@ -771,7 +820,7 @@
             </div>
 
             <div id="content-dashboard" class="content-section" style="display: none; grid-column: 2 / 4;">
-                <main class="feed masonry-feed" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                <main class="feed masonry-feed" style="margin: 0 auto; width: 100%;">
                     <header class="feed-header alt-header">
                         <div>
                             <h1>Dashboard Analytics</h1>
@@ -817,6 +866,8 @@
 
         </div>
     </div>
+
+
 
     <script src="script.js"></script>
 </body>
