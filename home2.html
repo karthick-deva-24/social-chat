@@ -19,6 +19,22 @@
 
 
     <div class="dashboard-wrapper">
+        <!-- TOP BAR FOR BRANDING & CONTROLS -->
+        <header class="top-bar">
+            <button id="mobile-drawer-trigger" class="mobile-drawer-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="top-bar-center">
+                <img src="images/stackly jpg.webp" alt="Stackly Logo" class="top-logo">
+            </div>
+            <div class="top-bar-right">
+                <a href="404.html" class="top-contact-link">
+                    <i class="fa-solid fa-circle-user"></i>
+                </a>
+            </div>
+        </header>
+
+        <div id="drawer-overlay" class="drawer-overlay"></div>
         <div class="dashboard-container">
             <!-- LEFT SIDEBAR -->
             <aside class="sidebar">
@@ -514,14 +530,14 @@
                         <!-- CREATOR PANEL -->
                         <div class="glass-card create-panel">
                             <h3>What's on your mind?</h3>
-                            <textarea placeholder="Type something cool..."></textarea>
+                            <textarea id="create-input-home2" placeholder="Type something cool..."></textarea>
                             <div class="create-footer">
                                 <div class="icons">
                                     <i class="fa-solid fa-camera"></i>
                                     <i class="fa-solid fa-video"></i>
                                     <i class="fa-solid fa-microphone"></i>
                                 </div>
-                                <button class="gradient-btn" onclick="window.location.href='404.html'">Publish</button>
+                                <button class="gradient-btn">Publish</button>
                             </div>
                         </div>
 
@@ -606,25 +622,51 @@
 
                 </aside>
 
-                <!-- Main Footer (Moved to center bottom) -->
+                <!-- Main Footer -->
                 <footer class="main-footer">
-                    <a href="home2.html">
-                        <img src="images/stackly jpg.webp" alt="Stackly Logo" style="width: 100px; object-fit: contain; margin-bottom: 10px;">
-                    </a>
-                    <p>&copy; 2026 Social Media Platform</p>
-                    <div class="main-footer-links">
-                        <a href="home2.html">Home</a>
-                        <a href="login.html">Login</a>
-                        <a href="index.html#friends">Friends</a>
-                        <a href="index.html#forums">Forums</a>
-                        <a href="index.html#settings">Settings</a>
-                        <a href="index.html#dashboard">Dashboard</a>
+                    <div class="footer-columns">
+                        <div class="footer-branding">
+                            <a href="home2.html">
+                                <img src="images/stackly jpg.webp" alt="Stackly Logo" class="footer-logo-large">
+                            </a>
+                            <p>&copy; 2026 Social Media Platform</p>
+                            <div class="main-footer-socials">
+                                <a href="404.html" class="tw"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="404.html" class="ig"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="404.html" class="fb"><i class="fa-brands fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Company</h4>
+                            <a href="home2.html">Home</a>
+                            <a href="login.html">Login</a>
+                            <a href="index.html#friends">Friends</a>
+                            <a href="index.html#forums">Forums</a>
+                            <a href="index.html#settings">Settings</a>
+                            <a href="index.html#dashboard">Dashboard</a>
+                            <a href="about.html">About Us</a>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Explore</h4>
+                            <a href="404.html">Safety Center</a>
+                            <a href="404.html">Community</a>
+                            <a href="404.html">Developers</a>
+                            <a href="404.html">Advertise</a>
+                            <a href="404.html">System Status</a>
+                            <a href="404.html">Store</a>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Legal & Support</h4>
+                            <a href="404.html">Terms of Service</a>
+                            <a href="404.html">Privacy Policy</a>
+                            <a href="404.html">Help Center</a>
+                            <a href="404.html">Cookie Policy</a>
+                            <a href="404.html">Careers</a>
+                            <a href="404.html">Safety Guidelines</a>
+                            <a href="404.html">Accessibility</a>
+                        </div>
                     </div>
-                    <div class="main-footer-socials">
-                        <a href="404.html" class="tw"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="404.html" class="ig"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="404.html" class="fb"><i class="fa-brands fa-facebook"></i></a>
-                    </div>
+
                 </footer>
             </div> <!-- End Newsfeed wrapper -->
 

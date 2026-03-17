@@ -132,10 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Toggle open class
             if (dropdown) {
                 const isOpen = dropdown.classList.toggle('open');
-                const post = dropdown.closest('.post-card');
-                if (post) {
-                    if (isOpen) post.classList.add('menu-open');
-                    else post.classList.remove('menu-open');
+                const container = dropdown.closest('.post-card') || dropdown.closest('.glass-card');
+                if (container) {
+                    if (isOpen) container.classList.add('menu-open');
+                    else container.classList.remove('menu-open');
                 }
             }
             return;
@@ -145,8 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!e.target.closest('.more-btn-dropdown')) {
             document.querySelectorAll('.more-btn-dropdown.open').forEach(d => {
                 d.classList.remove('open');
-                const post = d.closest('.post-card');
-                if (post) post.classList.remove('menu-open');
+                const container = d.closest('.post-card') || d.closest('.glass-card');
+                if (container) container.classList.remove('menu-open');
             });
         }
     });
@@ -240,24 +240,89 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('hashchange', handleHash);
+    // Handle Global Redirects to 404 (Comments & Specific Footer Sections)
+    document.addEventListener('click', (e) => {
+        // 1. Handle Comment Clicks
+        const actionBtn = e.target.closest('.action-btn, .stat, .comment-submit-btn');
+        if (actionBtn && (actionBtn.innerText.includes('Comment') || actionBtn.innerText.includes('Send') && actionBtn.classList.contains('comment-submit-btn'))) {
+            e.preventDefault();
+            window.location.href = '404.html';
+            return;
+        }
+
+        // 2. Handle Footer Section Links (Explore & Legal & Support)
+        const footerLink = e.target.closest('.footer-col a');
+        if (footerLink) {
+            const sectionHeader = footerLink.closest('.footer-col').querySelector('h4');
+            if (sectionHeader) {
+                const headerText = sectionHeader.innerText;
+                if (headerText.includes('Explore') || headerText.includes('Legal')) {
+                    e.preventDefault();
+                    window.location.href = '404.html';
+                }
+            }
+        }
+    });
+
     handleHash(); // Initial check
 
     // 4. Input 'Send' Interaction (News Feed Creator)
-    const sendBtn = document.querySelector('.send-btn');
-    const inputField = document.querySelector('#create-input');
+    const setupPostValidation = (btnSelector, inputSelector) => {
+        const btn = document.querySelector(btnSelector);
+        const input = document.querySelector(inputSelector);
 
-    if (sendBtn && inputField) {
-        const handleSend = (e) => {
-            if (inputField.value.trim() !== '') {
-                alert('Post shared successfully: ' + inputField.value);
-                inputField.value = '';
+        if (btn && input) {
+            // Create tooltip element
+            const tooltip = document.createElement('div');
+            tooltip.className = 'validation-tooltip';
+            tooltip.innerText = 'Please fill this slot';
+            
+            // Ensure parent has relative positioning
+            const parent = input.parentElement;
+            if (parent) {
+                parent.style.position = 'relative';
+                parent.appendChild(tooltip);
             }
-        };
-        sendBtn.addEventListener('click', handleSend);
-        inputField.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') handleSend();
-        });
-    }
+
+            let tooltipTimeout;
+
+            const showTooltip = () => {
+                tooltip.classList.add('show');
+                clearTimeout(tooltipTimeout);
+                tooltipTimeout = setTimeout(() => {
+                    tooltip.classList.remove('show');
+                }, 3000);
+            };
+
+            const handleSend = () => {
+                const val = input.value.trim();
+                if (val === '') {
+                    showTooltip();
+                    input.focus();
+                } else {
+                    window.location.href = '404.html';
+                }
+            };
+
+            btn.addEventListener('click', handleSend);
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    handleSend();
+                }
+            });
+
+            // Hide tooltip when typing
+            input.addEventListener('input', () => {
+                if (input.value.trim() !== '') {
+                    tooltip.classList.remove('show');
+                }
+            });
+        }
+    };
+
+    setupPostValidation('.send-btn', '#create-input'); // Home 1
+    setupPostValidation('.create-panel .gradient-btn', '#create-input-home2'); // Home 2
 
     // 5. Theme Toggle Logic
     const themeBtn = document.getElementById('theme-toggle');
@@ -392,5 +457,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
+    // 8. Mobile Drawer Logic
+    const drawerTrigger = document.getElementById('mobile-drawer-trigger');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const sidebarElement = document.querySelector('.sidebar');
+
+    if (drawerTrigger && drawerOverlay && sidebarElement) {
+        const toggleDrawer = (isOpen) => {
+            sidebarElement.classList.toggle('open', isOpen);
+            drawerOverlay.classList.toggle('active', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        };
+
+        drawerTrigger.addEventListener('click', () => toggleDrawer(true));
+        drawerOverlay.addEventListener('click', () => toggleDrawer(false));
+
+        // Close on nav click (mobile focus)
+        sidebarElement.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 1024) {
+                    toggleDrawer(false);
+                }
+            });
+        });
+    }
+
     addCommentSections();
 });
