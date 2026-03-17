@@ -304,9 +304,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const name = names[i];
                 htmlStr += `
                     <div class="glass-card new-post-st" style="text-align: center; padding: 20px;">
-                        <img src="${avatar}" alt="User" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 3px solid var(--primary);">
-                        <h4 style="margin-top: 10px; color: var(--text-main);">${name}</h4>
-                        <a href="404.html" class="gradient-btn" style="width: 100%; margin-top: 15px; padding: 5px; display: block; text-decoration: none; color: white;">Message</a>
+                        <img src="${avatar}" alt="User" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 3px solid var(--primary); margin-bottom: 10px;">
+                        <h4 style="color: var(--text-main); font-size: 1.1rem;">${name}</h4>
+                        <a href="404.html" class="gradient-btn" style="width: 100%; margin-top: 20px; padding: 10px 15px; display: block; text-decoration: none; color: white;">Message</a>
                     </div>
                 `;
             }
