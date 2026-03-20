@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-item');
     const contentSections = document.querySelectorAll('.content-section');
     const sidebar = document.querySelector('.sidebar');
-    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const sidebarOverlay = document.getElementById('drawer-overlay');
 
     function switchTab(targetId) {
         if (!targetId) return;
@@ -479,6 +479,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     toggleDrawer(false);
                 }
             });
+        });
+    }
+
+    // 9. Name Input Validation (Alphabets only)
+    const firstNameInput = document.getElementById('first-name');
+    const lastNameInput = document.getElementById('last-name');
+
+    if (firstNameInput) {
+        firstNameInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+        });
+    }
+    if (lastNameInput) {
+        lastNameInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
         });
     }
 

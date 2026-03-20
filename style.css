@@ -2203,6 +2203,14 @@ body.dark-mode .trending-card h3 {
         width: 100% !important;
         max-width: 100% !important;
         padding: 0 15px !important;
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+    }
+
+    /* Fix: Remove backdrop-filter on mobile to avoid trapping sidebar z-index/causing blur */
+    body.dark-mode .dashboard-container {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
 
     /* Sidebar stays at top as horizontal nav */
@@ -2495,5 +2503,23 @@ body.dark-mode .trending-card h3 {
         position: absolute;
         top: 20px;
         left: 20px;
+    }
+}
+
+/* Auth Page Improvements */
+.name-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .name-row {
+        flex-direction: column;
+    }
+}
+@media (max-width: 1024px) {
+    body.auth-page .login-container {
+        padding-top: 100px !important;
     }
 }
